@@ -1,0 +1,58 @@
+news:
+  heise:
+    title: Heise Online
+    url: "http://www.heise.de"
+    news_list: "http://www.heise.de/newsticker/"
+    news_list_css: "#archiv_woche li a"
+    single_news_css_body: "#mitte_news"
+    single_news_title_css: "h1"
+    single_news_pub_date_css: ".news_datum"
+    single_news_content_css: ".meldung_wrapper"
+  cb:
+    title: Computer Base
+    url: "http://www.computerbase.de"
+    news_list: "http://www.computerbase.de/news/"
+    news_list_css: ".box li.date-bullet a"
+    single_news_css_body: "#main article.box"
+    single_news_title_css: "h1"
+    single_news_pub_date_css: "time"
+    single_news_content_css: ".text-content"
+  hints:
+    title: Mac OSX Hints
+    url: "http://hints.macworld.com"
+    news_list: "http://hints.macworld.com"
+    news_list_css: ".story .story-title a.non-ul"
+    single_news_css_body: ".story"
+    single_news_title_css: ".story-title"
+    single_news_pub_date_css:
+    single_news_content_css: ".story-body"
+    custom_command: "children.first"
+  spiegel_wissenschaft:
+    title: "Spiegel - Wissenschaft"
+    url: "http://www.spiegel.de"
+    news_list: "http://www.spiegel.de/wissenschaft/"
+    news_list_css: "#spTeaserColumn .spTopThema a"
+    single_news_css_body: "#spArticleColumn"
+    single_news_title_css: ".spArticleHeadLine"
+    single_news_pub_date_css: "#spShortDate"
+    single_news_content_css: "spArticleColumn"
+    custom_command: "children.first"
+comics:
+  penny:
+    title: Penny Arcade
+    url: "http://penny-arcade.com/comic"
+    single_news_css_body: ".content #bodyFull"
+    single_news_title_css: "h2"
+    single_news_content_css: ".post img"
+  wumo:
+    title: WulffMorgenthaler
+    url: "http://wumocomicstrip.com"
+    single_news_css_body: ".striben"
+    single_news_title_css: ".gold"
+    single_news_content_css: ".stribe img"
+  explosm:
+    title: "Cyanide & Happiness"
+    url: "http://www.explosm.net/comics/new/"
+    single_news_css_body: "border: 3px solid #CCCCCC; padding: 0px; background-color: #FFFFFF;"
+    single_news_title_css: "nobr"
+    single_news_content_css: "'width: 722px; overflow: auto; text-align: center;'"

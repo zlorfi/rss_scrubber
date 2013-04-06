@@ -1,0 +1,10 @@
+!!! XML
+%rss{:version => "2.0", "xmlns:atom" => "http://www.w3.org/2005/Atom"}
+  %channel
+    %title= @url['title']
+    %link= @url['url']
+    %description your site's description
+    - news = Nokogiri::HTML(open(@url['url']))
+    - news.css(@url['single_news_css_body']).each do |rss_item|
+      %item
+        %title= rss_item.at_css(@url['single_news_title_css']).text

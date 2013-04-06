@@ -1,0 +1,16 @@
+!!! XML
+%rss{:version => "2.0", "xmlns:atom" => "http://www.w3.org/2005/Atom"}
+	%channel
+		%title= @url['title']
+		%link= @url['url']
+		%description your site's description
+		- news = Nokogiri::HTML(open(@url['news_list']))
+		- news.css(@url['news_list_css'])[0..9].each do |news_item|
+			- doc = Nokogiri::HTML(open(news_item[:href].match(/^http.+/) ? news_item[:href] : "#{@url['url']}#{news_item[:href]}"))
+			- doc.css(@url['single_news_css_body']).each do |rss_item|
+				%item
+					%title= rss_item.at_css(@url['single_news_title_css']).children.first
+					%link= "#{@url['url']}#{rss_item[:href]}"
+					%guid= Digest::MD5.hexdigest(rss_item.at_css(@url['single_news_title_css']).text)
+					%pubDate= rss_item.at_css(@url['single_news_pub_date_css']).text unless rss_item.at_css(@url['single_news_pub_date_css']).nil?
+					%description= rss_item.at_css(@url['single_news_content_css'])

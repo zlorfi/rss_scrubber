@@ -1,0 +1,9 @@
+!!! 5
+%head
+  %title All News
+  %body
+    - @url.each do |k,v|
+      .type #{k}
+      - v.each do |name, value|
+        %a{:href => "http://#{request.host_with_port}/#{k}/#{name}", :class => "#{k}_item"} #{value['title']}
+        %br
