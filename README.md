@@ -11,5 +11,7 @@ This app is not 100% bulletproof
 nokogiri won't work on MacOS 10.8.2
 
 `brew install libxml2 libxslt`
+
 `brew install libiconv`
+
 `sudo gem install nokogiri -- --with-xslt-dir=/usr/local/opt/libxslt`
